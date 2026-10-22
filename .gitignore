@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Datasets and generated data
+data/
+datasets/
+processed/
+iot_23_datasets_small.tar.gz
+
+# Logs and runtime files
+logs/
+*.log
+*.pid
+
+# Spark and Hadoop
+spark-warehouse/
+metastore_db/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS and editor
+.DS_Store
+.vscode/
+.idea/
+
+# Local backups
+backups/
+
+# Spark/Hadoop generated metadata
+**/._*
+**/*.crc
+**/_SUCCESS

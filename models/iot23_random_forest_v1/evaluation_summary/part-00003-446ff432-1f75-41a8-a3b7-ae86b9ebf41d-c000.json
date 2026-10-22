@@ -1,0 +1,1 @@
+{"total_records":246662,"training_records":213114,"testing_records":33548,"true_positives":13545,"false_positives":111,"false_negatives":15899,"malicious_precision":0.991871704745167,"malicious_recall":0.46002581171036544,"malicious_f1":0.628538283062645}
