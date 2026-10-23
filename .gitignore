@@ -12,7 +12,9 @@ env/
 !.env.example
 
 # Datasets and generated data
-data/
+!models/iot23_random_forest_v1/pipeline_model/**
+!models/iot23_random_forest_v1/pipeline_model/**/data/
+!models/iot23_random_forest_v1/pipeline_model/**/data/**
 datasets/
 processed/
 iot_23_datasets_small.tar.gz
@@ -41,4 +43,4 @@ backups/
 # Spark/Hadoop generated metadata
 **/._*
 **/*.crc
-**/_SUCCESS
+!models/iot23_random_forest_v1/pipeline_model/**/_SUCCESS
