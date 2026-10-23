@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 DETECTION_THRESHOLD = 0.25
 from pydantic import BaseModel, Field
@@ -16,13 +17,25 @@ from trust.risk_engine import RiskInputs, calculate_risk, calculate_trust_debt
 from trust.audit import record_decision, get_audit_history
 
 MODEL_PATH = str(
-    Path.home() / "trustgate/models/iot23_random_forest_v1/pipeline_model"
+    Path(__file__).resolve().parent.parent
+    / "models" / "iot23_random_forest_v1" / "pipeline_model"
 )
 
 app = FastAPI(
     title="TrustGate API",
     description="AI prediction and operational trust governance",
     version="0.3.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://trustgatefrontend.vercel.app",
+        "http://localhost:5173",
+    ],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 spark = (
